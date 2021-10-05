@@ -8,9 +8,6 @@ export default function Task() {
   const [transcation, setTranscation] = useState([]);
 
   const handleAdd = () => {
-    // if (initailValue !== "" && initailValue !== undefined){
-    //     alert("Please enter value!")
-    // }
     setBalance(initailValue + balance);
     const totalTranscationHistory = [];
     totalTranscationHistory.push(...transcation, {
@@ -37,22 +34,10 @@ export default function Task() {
   };
 
   return (
-    <Card
-      style={{
-        border: "1px solid black",
-        margin: "20px",
-        textAlign: "center",
-      }}
-    >
+    <Card className="card-style">
       <h1>Expense Tracker- Basic</h1>
 
-      <Card
-        style={{
-          border: "1px solid black",
-          margin: "20px",
-          textAlign: "center",
-        }}
-      >
+      <Card className="card-style">
         <Row>
           <Col span={24}>
             <h2>Balance: {balance}</h2>
@@ -66,13 +51,9 @@ export default function Task() {
           </Col>
           <Col span={24} style={{ justifyContent: "space-between" }}>
             <Button
+              className="Btn-Add"
               onClick={handleAdd}
               style={{
-                width: "10%",
-                marginRight: "2.5%",
-                background: "green",
-                color: "white",
-                fontWeight: "700",
                 cursor:
                   initailValue === null || initailValue === 0
                     ? "not-allowed"
@@ -82,12 +63,9 @@ export default function Task() {
               ADD
             </Button>
             <Button
+              className="Btn-Remove"
               onClick={handleRemove}
               style={{
-                width: "10%",
-                background: "red",
-                color: "white",
-                fontWeight: "700",
                 cursor:
                   initailValue === null || initailValue === 0
                     ? "not-allowed"
@@ -100,12 +78,7 @@ export default function Task() {
         </Row>
       </Card>
 
-      <Card
-        style={{
-          border: "1px solid black",
-          margin: "20px",
-        }}
-      >
+      <Card className="card-style">
         <Row>
           <h3 style={{ float: "left" }}>Transcations:</h3>
         </Row>
